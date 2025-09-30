@@ -1,0 +1,22 @@
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+include = "apps/api/"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I", "B", "UP", "N", "ANN"]
+ignore = ["ANN101", "ANN102", "ANN401"]
+
+[tool.ruff.per-file-ignores]
+"apps/api/tests/*" = ["ANN"]
+
+[tool.pytest.ini_options]
+testpaths = ["apps/api/tests"]
+addopts = "-q"
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["apps/api/app"]
+branch = true

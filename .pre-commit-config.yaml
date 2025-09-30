@@ -1,0 +1,15 @@
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.2.0
+    hooks:
+      - id: black
+        additional_dependencies: ["sqlmodel"]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.5
+    hooks:
+      - id: ruff
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.0.0
+    hooks:
+      - id: eslint
+        args: ["apps/web"]
